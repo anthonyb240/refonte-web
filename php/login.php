@@ -17,7 +17,7 @@
             <label for="toggle" class="label"></label>
         </div>
 
-            <div class="logo"><a href="index.html">Back to the Stack</a></div>
+            <div class="logo"><a href="../html/index.html">Back to the Stack</a></div>
             <ul class="liens">
                 <li><a href="../html/recherche.html">🔎</a></li>
                 <li><a href="../html/index.html">Menu Principal</a></li>

@@ -12,7 +12,7 @@
         <div class="navbar">
             <div class="mode"><input type="checkbox" id="toggle" class="checkbox">
             <label for="toggle" class="label"></label></div>
-            <div class="logo"><a href="index.html">Back to the Stack</a></div>
+            <div class="logo"><a href="../html/index.html">Back to the Stack</a></div>
             <ul class="liens">
                 <li><a href="recherche.php">🔎</a></li>
                 <li><a href="../html/index.html">Menu Principal</a></li>
