@@ -533,6 +533,56 @@ header {
     font-weight: bold;
 }
 
+.texte_membre {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    margin-top: 0;
+    margin-left: 20%;
+    padding: 50px;
+    max-width: 1200px;
+    background: linear-gradient(135deg, #000, #2B2B7B, #4C4CFF);
+    color: whitesmoke;
+}
+
+.texte_membre ul {
+    display:center;
+}
+
+.photo_email-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presentation_img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.p_email {
+    margin: 2% 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.formation {
+    margin: 2% 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.competences {
+    margin: 2% 0;
+    font-size: 14px;
+    text-align: center;
+}
+
 .label{
     display: inline-block;
     height: 30px;
@@ -567,16 +617,6 @@ header {
     background: #4141d2;
 }
 
-body.signup_body {
-    font-family: "Kanit", Arial, sans-serif;
-    background-color: black;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .signup_form {
     background: linear-gradient(135deg, #000, #2B2B7B, #4C4CFF);
     padding: 30px 20px;
@@ -585,7 +625,8 @@ body.signup_body {
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin-top: 12%;
+    margin-top: 2%;
+    margin-left: 40%;
 }
 
 .signup_form h1 {
@@ -641,16 +682,6 @@ body.signup_body {
     background-color: #005bb5;
 }
 
-.login_body {
-    font-family: "Kanit", Arial, sans-serif;
-    background-color: black;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .login_form {
     background: linear-gradient(135deg, #000, #2B2B7B, #4C4CFF);
     padding: 30px 20px;
@@ -659,9 +690,9 @@ body.signup_body {
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 2%;
+    margin-left: 40%;
 }
-
 .login_form h1 {
     color: #fff;
     font-size: 20px;

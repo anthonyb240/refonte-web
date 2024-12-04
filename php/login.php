@@ -12,48 +12,48 @@
 
 <body class= "login_body">
 <header>
-   
-   <div class="navbar">
-       <div class="mode"><input type="checkbox" id="toggle" class="checkbox">
-       <label for="toggle" class="label"></label></div>
-       <div class="logo"><a href="index.html">Back to the Stack</a></div>
-       <ul class="liens">
-           <li><a href="recherche.html">🔎</a></li>
-           <li><a href="index.html">Menu Principal</a></li>
-           <li><a href="comptech.html">Compétences Techniques</a></li>
-           <li><a href="méthode.html">Méthode</a></li>
-           <li><a href="anciens clients.html">Expérience</a></li>
-           <li><a href="notreequipe.html">Équipe</a></li>
-       </ul>
-       <a href="../php/login.php" class="action_btn">Login</a>
-       <div class="toggle_btn">
-           <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
-       </div>
-   </div>
+        <div class="navbar">
+            <div class="mode"><input type="checkbox" id="toggle" class="checkbox">
+            <label for="toggle" class="label"></label>
+        </div>
 
-   <div class="dropdown_menu">
-       <ul>
-           <li><a href="recherche.html">🔎</a></li>
-           <li><a href="index.html">Menu Principal</a></li>
-           <li><a href="comptech.html">Compétences Techniques</a></li>
-           <li><a href="méthode.html">Méthode</a></li>
-           <li><a href="anciens clients.html">Expérience</a></li>
-           <li><a href="notreequipe.html">Équipe</a></li>
-           <li><a href="../php/login.php" class="action_btn">Login</a></li>
-       </ul>
-       
-   </div>
-</header>
+            <div class="logo"><a href="index.html">Back to the Stack</a></div>
+            <ul class="liens">
+                <li><a href="../html/recherche.html">🔎</a></li>
+                <li><a href="../html/index.html">Menu Principal</a></li>
+                <li><a href="../html/comptech.html">Compétences Techniques</a></li>
+                <li><a href="../html/méthode.html">Méthode</a></li>
+                <li><a href="../html/anciens clients.html">Expérience</a></li>
+                <li><a href="../html/notreequipe.html">Équipe</a></li>
+            </ul>
+            
+            <a href="signup.php" class="action_btn">Signup</a>
+            <a href="login.php" class="action_btn">Login</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+            </div>
 
-<div class = "container" id= "titre_login">
-    <h1> Connectez-vous !</h1> 
-</div>
+        </div>
 
+        <div class="dropdown_menu">
+            <ul>
+                <li><a href="../html/recherche.html">🔎</a></li>
+                <li><a href="../html/index.html">Menu Principal</a></li>
+                <li><a href="../html/comptech.html">Compétences Techniques</a></li>
+                <li><a href="../html/méthode.html">Méthode</a></li>
+                <li><a href="../html/anciens clients.html">Expérience</a></li>
+                <li><a href="../html/notreequipe.html">Équipe</a></li>
+                <li><a href="signup.php" class="action_btn2">Signup</a></li>
+                <li><a href="login.php" class="action_btn2">Login</a></li>
+            </ul>
+        </div>
+    </header>
 
 <?php 
     $servername = "localhost";
     $username = "root";
     $password = "root";
+    $error_msg = ""; 
 
     try {
         $bdd = new PDO("mysql:host=$servername;dbname=utilisateurs", $username, $password);
@@ -96,23 +96,12 @@
 <script src="../js/script.js"></script>
 
 <?php
-$error_msg = "Email ou mdp incorrect";
 if($error_msg){
     ?>
     <p><?php echo $error_msg; ?></p> 
     <?php
 }
 ?>
-
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-          new google.translate.TranslateElement(
-              {pageLanguage: 'en'},
-              'google_translate_element'
-          );
-      } 
-</script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

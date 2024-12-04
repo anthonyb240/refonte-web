@@ -419,6 +419,7 @@ header {
         border: 5px solid black;
         box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.7);
         border-radius: 15px;
+        margin-top: 1%;
     }
     
     .presentation_text-container {
@@ -510,7 +511,62 @@ header {
         color: #ff004c;
         font-weight: bold;
     }
+
+    .texte_membre {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
+        margin-top: 0;
+        margin-left: 20%;
+        padding: 50px;
+        max-width: 1200px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
+    }
+    .texte_membre ul {
+        display:center;
+    }
     
+    .photo_email-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .presentation_img {
+        width: 150px;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .p_email {
+        margin: 2% 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .formation {
+        margin: 2% 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .competences {
+        margin: 2% 0;
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .presentation_text-container {
+        flex: 1; 
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
     .checkbox:checked + label:after{
         transform: translateX(20px);
     }
@@ -549,16 +605,6 @@ header {
         background: #4141d2;
     }
     
-    body.signup_body {
-        font-family: "Kanit", Arial, sans-serif;
-        background-color: whitesmoke;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
     .signup_form {
         background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
         padding: 30px 20px;
@@ -567,7 +613,8 @@ header {
         width: 100%;
         max-width: 400px;
         text-align: center;
-        margin-top: 12%;
+        margin-top: 2%;
+        margin-left: 40%;
     }
     
     .signup_form h1 {
@@ -623,17 +670,6 @@ header {
         background-color: rgba(209, 209, 209) ;
     }
     
-    
-    .login_body {
-        font-family: "Kanit", Arial, sans-serif;
-        background-color: whitesmoke;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
     .login_form {
         background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
         padding: 30px 20px;
@@ -642,7 +678,8 @@ header {
         width: 100%;
         max-width: 400px;
         text-align: center;
-        margin-top: 100px;
+        margin-top: 2%;
+        margin-left: 40%;
     }
     
     .login_form h1 {
