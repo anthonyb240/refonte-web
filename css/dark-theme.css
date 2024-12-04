@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Zen+Dots&display=swap');
 
 * {
+    width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
     word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */
 }
+
 
 body {
     height: 100vh;
@@ -50,6 +51,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .navbar .logo a {
@@ -125,6 +127,37 @@ header {
     display: block; /* Affiche le menu déroulant */
 }
 
+.titre_index {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.titre_index .back h1 {
+    font-size: 3rem;
+    font-family: 'Zen Dots', sans-serif;
+    color: orange;
+}
+.titre_index .dev h2 {
+    font-size: 2rem;
+    color: #ddd;
+    margin: 0;
+}
+
+.titre_index .globe_index {
+    margin-top: 20px; 
+}
+
+.titre_index .globe_index img {
+    width: 150px; 
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centre horizontalement l'image */
+}
+
 /* Responsivité */
 @media (max-width: 1025px) {
     .navbar .liens {
@@ -182,7 +215,7 @@ header {
     .action_btn  {
         display: none;
     }
-    .action_btn {
+    .action_btn2 {
         font-size: 0.75rem; /* Réduit la taille du bouton sur petits écrans */
         padding: 0.3rem 0.8rem; /* Réduit la taille du bouton */
     }
@@ -195,109 +228,7 @@ header {
 	position:relative;
 }
 
-.index_body {
-	background-image: url('../images/image_index.jpg');
-	background-size: cover;
-  	background-position: center;
-	font-family: "Kanit", sans-serif;
-	font-weight: 300;
-	position: relative;
-}
 
-.index_body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  background-size: cover;
-
-  filter: blur(8px);
-  z-index: -1;
-  background-position: center;
-}
-
-.index_container {
-	display: flex;
-	flex-direction: row;
-	height: 100vh;
-}
-
-.index_row {
-	display: flex;
-	width: 100%;
-}
-
-.index_gauche {
-	width: 70%;
-	text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 13%;
-    margin-left: 4%;
-}
-
-.index_globe-logo {
-	width: 13%;
-	height: auto;
-}
-
-.index_h1 {
-	font-family: "Zen Dots", sans-serif;
-	font-size: 3.5rem;
-	color: #fff;
-	margin: 1% 0;
-}
-
-.index_h2 {
-	font-family: "Zen Dots", sans-serif;
-	font-size: 2.5rem;
-	color: #b3582c;
-	margin: 1% 0;
-}
-
-.index_droite {
-    width: 20%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.2) 20%, rgba(53,51,205,0.3) 30%, rgba(53,51,205,0.4) 40%, rgba(53,51,205,0.5) 50%, rgba(53,51,205,0.6) 60%, rgba(53,51,205,0.7) 70%, rgba(53,51,205,0.8) 80%, rgba(53,51,205,0.9) 90%, rgba(53,51,205,1) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    padding: 2%;
-    z-index: 10;
-}
-
-.index_menu {
-	text-align: right;
-	width: 100%;
-}
-
-.index_menu a {
-	font-size: 1.4rem;
-	color: #fff;
-	text-decoration: none; 
-	margin: 5% 0;
-	display: block;
-}
-
-.index_menu a:hover {
-    font-weight: bold;
-    color: #b3582c;
-}
-
-.index_menu hr {
-    width: 60%;
-    border: none;
-    border-top: 1px solid #fff;
-    margin-left: 40%;
-}
 
 .methode_body {
     font-family: 'Kanit', sans-serif;
@@ -321,6 +252,15 @@ header {
     font-weight: 600;
     color: #fff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%; /* Assurez-vous que le h1 prend toute la largeur */
+    box-sizing: border-box; /* Assurez-vous que le padding et la largeur sont gérés correctement */
+}
+
+@media (max-width: 576px) {
+    .methode_h1 {
+        font-size: 2rem; /* Réduit la taille du texte sur petits écrans */
+        padding: 20px 0; /* Ajuste le padding pour que ce soit plus lisible */
+    }
 }
 
 .methode_text-container {
@@ -352,6 +292,15 @@ header {
     font-weight: 600;
     color: #fff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%; /* Assurez-vous que le h1 prend toute la largeur */
+    box-sizing: border-box; /* Assurez-vous que le padding et la largeur sont gérés correctement */
+}
+
+@media (max-width: 576px) {
+    .comptech_h1 {
+        font-size: 2rem; /* Réduit la taille du texte sur petits écrans */
+        padding: 20px 0; /* Ajuste le padding pour que ce soit plus lisible */
+    }
 }
 
 .comptech_p {
@@ -412,12 +361,21 @@ header {
     background: linear-gradient(90deg, #000, #2B2B7B, #4C4CFF);
     margin-top: 4.4%;
     padding: 30px 0;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: 4rem;
     text-transform: uppercase;
     font-family: 'Zen Dots', sans-serif;
     font-weight: 600;
     color: #fff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%; /* Assurez-vous que le h1 prend toute la largeur */
+    box-sizing: border-box; /* Assurez-vous que le padding et la largeur sont gérés correctement */
+}
+
+@media (max-width: 576px) {
+    .ac_h1 {
+        font-size: 2rem; /* Réduit la taille du texte sur petits écrans */
+        padding: 20px 0; /* Ajuste le padding pour que ce soit plus lisible */
+    }
 }
 
 .ac_image-grid {
@@ -466,6 +424,13 @@ header {
 	line-height: 1.6;
 	height: 100%; 
 }
+.presentation_html{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */ 
+}
 
 .presentation_body {
     font-family: 'Kanit', sans-serif;
@@ -489,7 +454,17 @@ header {
     font-weight: 600;
     color: #fff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%; /* Assurez-vous que le h1 prend toute la largeur */
+    box-sizing: border-box; /* Assurez-vous que le padding et la largeur sont gérés correctement */
 }
+
+@media (max-width: 576px) {
+    .presentation_h1 {
+        font-size: 2rem; /* Réduit la taille du texte sur petits écrans */
+        padding: 20px 0; /* Ajuste le padding pour que ce soit plus lisible */
+    }
+}
+
 
 .presentation_img {
     width: 400px;

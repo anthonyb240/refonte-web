@@ -12,6 +12,39 @@
 </head>
 
 <body class="methode_body">
+    <header>
+   
+        <div class="navbar">
+            <div class="mode"><input type="checkbox" id="toggle" class="checkbox">
+            <label for="toggle" class="label"></label></div>
+            <div class="logo"><a href="index.html">Back to the Stack</a></div>
+            <ul class="liens">
+                <li><a href="recherche.html">🔎</a></li>
+                <li><a href="index.html">Menu Principal</a></li>
+                <li><a href="comptech.html">Compétences Techniques</a></li>
+                <li><a href="méthode.html">Méthode</a></li>
+                <li><a href="anciens clients.html">Expérience</a></li>
+                <li><a href="notreequipe.html">Équipe</a></li>
+            </ul>
+            <a href="../php/login.php" class="action_btn">Login</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+            </div>
+        </div>
+    
+        <div class="dropdown_menu">
+            <ul>
+                <li><a href="recherche.html">🔎</a></li>
+                <li><a href="index.html">Menu Principal</a></li>
+                <li><a href="comptech.html">Compétences Techniques</a></li>
+                <li><a href="méthode.html">Méthode</a></li>
+                <li><a href="anciens clients.html">Expérience</a></li>
+                <li><a href="notreequipe.html">Équipe</a></li>
+                <li><a href="../php/login.php" class="action_btn">Login</a></li>
+            </ul>
+            
+        </div>
+    </header>
     <h1 class="methode_h1">Notre méthode</h1>
 
     <div class="texte">
@@ -47,5 +80,16 @@
     </div>
 
     <script src="../js/script.js"></script>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+const toggleBtnIcon = document.querySelector('.toggle_btn i');
+const dropDownMenu = document.querySelector('.dropdown_menu');
+
+toggleBtn.onclick = function() {
+    dropDownMenu.classList.toggle('open');
+    const isOpen = dropDownMenu.classList.contains('open');
+    toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+};
+    </script>
 </body>
 </html>

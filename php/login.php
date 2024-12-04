@@ -11,24 +11,43 @@
 </head>
 
 <body class= "login_body">
+<header>
+   
+   <div class="navbar">
+       <div class="mode"><input type="checkbox" id="toggle" class="checkbox">
+       <label for="toggle" class="label"></label></div>
+       <div class="logo"><a href="index.html">Back to the Stack</a></div>
+       <ul class="liens">
+           <li><a href="recherche.html">🔎</a></li>
+           <li><a href="index.html">Menu Principal</a></li>
+           <li><a href="comptech.html">Compétences Techniques</a></li>
+           <li><a href="méthode.html">Méthode</a></li>
+           <li><a href="anciens clients.html">Expérience</a></li>
+           <li><a href="notreequipe.html">Équipe</a></li>
+       </ul>
+       <a href="../php/login.php" class="action_btn">Login</a>
+       <div class="toggle_btn">
+           <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+       </div>
+   </div>
+
+   <div class="dropdown_menu">
+       <ul>
+           <li><a href="recherche.html">🔎</a></li>
+           <li><a href="index.html">Menu Principal</a></li>
+           <li><a href="comptech.html">Compétences Techniques</a></li>
+           <li><a href="méthode.html">Méthode</a></li>
+           <li><a href="anciens clients.html">Expérience</a></li>
+           <li><a href="notreequipe.html">Équipe</a></li>
+           <li><a href="../php/login.php" class="action_btn">Login</a></li>
+       </ul>
+       
+   </div>
+</header>
+
 <div class = "container" id= "titre_login">
     <h1> Connectez-vous !</h1> 
 </div>
-<nav class="navbar">
-        <div class="nav-container">
-            <a href="../html/index.html" class="nav-logo">BACK TO THE STACK</a>
-            <ul class="nav-links">
-                <li><a href="../html/recherche.html">🔎</a></li>
-                <li><a href="login.php">Connexion</a></li>
-                <li><a href="signup.php">Inscription</a></li>
-                <li><a href="../html/index.html">Menu Principal</a></li>
-                <li><a href="../html/comptech.html">Compétences Techniques</a></li>
-                <li><a href="../html/méthode.html">Méthode</a></li>
-                <li><a href="../html/anciens clients.html">Expérience</a></li>
-                <li><a href="../html/notreequipe.html">Équipe</a></li>
-            </ul>
-        </div>
-    </nav>
 
 
 <?php 
