@@ -91,48 +91,48 @@
         </form>
     </div>
 
-    <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
 
-try {
-    $bdd = new PDO("mysql:host=$servername;dbname=utilisateurs", $username, $password);
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
-}
+    function isPasswordCompromised($mdp) {
+        $sha1Password = strtoupper(sha1($mdp)); 
+        $prefix = substr($sha1Password, 0, 5);
+        $suffix = substr($sha1Password, 5); 
 
-function checkPasswordWithHIBP($password) {
-    $sha1Password = strtoupper(sha1($password)); 
-    $prefix = substr($sha1Password, 0, 5);
-    $suffix = substr($sha1Password, 5); 
+        $url = "https://api.pwnedpasswords.com/range/$prefix";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
 
-    $url = "https://api.pwnedpasswords.com/range/$prefix";
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $response = curl_exec($ch);
-    curl_close($ch);
+        return strpos($response, $suffix) !== false;
+    }
 
-    return strpos($response, $suffix) !== false;
-}
-
-if (isset($_POST['ok'])) {
-    $email = $_POST['email'];
-    $mdp = $_POST['mdp'];
-
-    if (empty($mdp)) {
-        echo "<p style='color: red;'>Veuillez entrer un mot de passe.</p>";
-
-    } elseif (checkPasswordWithHIBP($password)) {
-            $error = "Ce mot de passe a été compromis. Veuillez en choisir un autre.";
-
+    if (isPasswordCompromised($password)) {
+        $error = "Ce mot de passe a été compromis. Veuillez en choisir un autre.";
+        
     } else {
+        $dsn = "mysql:host=mysql;port=3306;dbname=Website;charset=utf8mb4";
+
+        try {
+            $bdd = new PDO("mysql:host=$servername;dbname=utilisateurs", $username, $password);
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Erreur : " . $e->getMessage();
+        }
+
+
+        if (isset($_POST['ok'])) {
+            $email = $_POST['email'];
+            $mdp = $_POST['mdp'];
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
             $pseudo = $_POST['pseudo'];
 
+                
             $requete = $bdd->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom, MD5(:mdp), :email)");
             $requete->execute([
                 "pseudo" => $pseudo,
@@ -142,7 +142,7 @@ if (isset($_POST['ok'])) {
                 "email" => $email
             ]);
             echo "<p>Utilisateur ajouté avec succès.</p>";
-        }
+        } 
     }
 ?>
 
