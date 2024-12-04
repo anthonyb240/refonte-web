@@ -4,8 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-    word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */
+    word-wrap: break-word;
 }
 
 body {
@@ -17,6 +16,19 @@ body {
     justify-content: center;
 }
 
+h1 {
+    text-align: center;
+    background:  linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
+    margin-top: 4%;
+    padding: 2%;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Zen Dots', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
 li {
     list-style: none;
 }
@@ -25,7 +37,7 @@ a {
     text-decoration: none;
     color: white;
     font-size: 1rem;
-    white-space: nowrap; /* Evite le texte sur plusieurs lignes */
+    white-space: nowrap;
 }
 
 a:hover {
@@ -33,7 +45,7 @@ a:hover {
 }
 
 header {
-    background-color: rgba(50, 108, 209, 0.7);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
     margin-top: auto;
     position: relative;
     padding: 0.2rem;
@@ -47,12 +59,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .navbar .logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    white-space: nowrap; /* Evite le texte sur plusieurs lignes */
+    white-space: nowrap;
 }
 
 .logo{
@@ -63,7 +76,7 @@ header {
 .navbar .liens {
     display: flex;
     gap: 2rem;
-    flex-wrap: wrap; /* Permet aux liens de passer à la ligne suivante si nécessaire */
+    flex-wrap: wrap;
 }
 
 .navbar .toggle_btn {
@@ -95,15 +108,17 @@ header {
 }
 
 .dropdown_menu {
-    display: none; /* Par défaut, caché */
+    display: none;
     position: absolute;
     top: 60px;
     right: 0;
     width: 300px;
-    background-color: rgba(50, 108, 209, 0.7);
+    background-color: rgba(50, 108, 209, 0.5);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);;
 }
 
 .dropdown_menu ul {
@@ -120,7 +135,7 @@ header {
 }
 
 .dropdown_menu.open {
-    display: block; /* Affiche le menu déroulant */
+    display: block;
 }
 
 .titre_index {
@@ -132,14 +147,18 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .titre_index .back h1 {
     font-size: 3rem;
     font-family: 'Zen Dots', sans-serif;
     color: orange;
+    background: whitesmoke;
+    box-shadow: none;
 }
+
 .titre_index .dev h2 {
     font-size: 2rem;
-    color: #ddd;
+    color: #555555;
     margin: 0;
 }
 
@@ -151,7 +170,7 @@ header {
     width: 150px; 
     height: auto;
     display: block;
-    margin: 0 auto; /* Centre horizontalement l'image */
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 1025px) {
@@ -194,14 +213,13 @@ header {
         width: unset;
     }
 
-    /* Adaptation du logo et des liens sur les petits écrans */
     .navbar .logo a {
-        font-size: 1.2rem; /* Plus petit pour les petits écrans */
+        font-size: 1.2rem;
     }
 
     .navbar .liens {
-        display: block; /* Force les éléments à se disposer sur plusieurs lignes */
-        gap: 1rem; /* Réduit l'espace entre les liens */
+        display: block;
+        gap: 1rem;
     }
     .liens li a {
         display: none;
@@ -211,8 +229,8 @@ header {
         display: none;
     }
     .action_btn {
-        font-size: 0.75rem; /* Réduit la taille du bouton sur petits écrans */
-        padding: 0.3rem 0.8rem; /* Réduit la taille du bouton */
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
     }
 }
 
@@ -221,15 +239,6 @@ header {
         overflow: hidden;
         height:100%;
         position:relative;
-    }
-    
-    .index_body {
-        background-image: url('../images/binaire.jpg');
-        background-size: cover;
-          background-position: center;
-        font-family: "Kanit", sans-serif;
-        font-weight: 300;
-        position: relative;
     }
     
     .index_container {
@@ -312,30 +321,7 @@ header {
         border-top: 1px solid black;
         margin-left: 40%;
     }
-    
-    .methode_body {
-        font-family: 'Kanit', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: whitesmoke;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .methode_h1 {
-        text-align: center;
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
-        margin-top: 4%;
-        padding: 2%;
-        font-size: 2rem;
-        text-transform: uppercase;
-        font-family: 'Zen Dots', sans-serif;
-        font-weight: 600;
-        color: black;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    }
-    
+
     .methode_text-container {
         display: flex;
         flex-wrap: wrap;
@@ -344,29 +330,6 @@ header {
         margin: 0 auto;
         padding: 50px;
         max-width: 1200px;
-    }
-    
-    .comptech_body {
-        font-family: 'Kanit', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: whitesmoke;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .comptech_h1 {
-        text-align: center;
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
-        margin-top: 4%;
-        padding: 2%;
-        font-size: 2rem;
-        text-transform: uppercase;
-        font-family: 'Zen Dots', sans-serif;
-        font-weight: 600;
-        color: black;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     }
     
     .comptech_p {
@@ -410,30 +373,7 @@ header {
     .comptech_tr:nth-child(odd) {
         background: #222;
     }
-    
-    .ac_body {
-        font-family: 'Kanit', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: whitesmoke;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .ac_h1 {
-        text-align: center;
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
-        margin-top: 4%;
-        padding: 2%;
-        font-size: 2rem;
-        text-transform: uppercase;
-        font-family: 'Zen Dots', sans-serif;
-        font-weight: 600;
-        color: black;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    }
-    
+
     .ac_image-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -470,39 +410,7 @@ header {
         flex-direction: column;
         gap: 20px;
     }
-    
-    .notre_equipe_body {
-        font-family: "Kanit", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: whitesmoke;
-        line-height: 1.6;
-        height: 100%; 
-    }
-    
-    .presentation_body {
-        font-family: 'Kanit', sans-serif;
-        margin: 0;
-        padding: 0;
-        background: whitesmoke;
-        color: black;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .presentation_h1 {
-        text-align: center;
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
-        margin-top: 4.4%;
-        padding: 30px 0;
-        font-size: 4rem;
-        text-transform: uppercase;
-        font-family: 'Zen Dots', sans-serif;
-        font-weight: 600;
-        color: black;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    }
+
     
     .presentation_img {
         width: 400px;

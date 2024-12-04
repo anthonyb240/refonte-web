@@ -45,7 +45,7 @@ a:hover {
 }
 
 header {
-    background-color: rgba(50, 108, 209, 0.578);
+    background: linear-gradient(90deg, #000, #2B2B7B, #4C4CFF);;
     margin-top: auto;
     position: relative;
     padding: 0.2rem;
@@ -148,6 +148,9 @@ header {
     font-size: 3rem;
     font-family: 'Zen Dots', sans-serif;
     color: orange;
+    box-shadow: none;
+    background: black;
+    box-shadow: none;
 }
 
 .titre_index .dev h2 {
@@ -210,7 +213,7 @@ header {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */ 
+        word-wrap: break-word;
     }
     
     .index_html {

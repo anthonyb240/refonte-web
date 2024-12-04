@@ -71,6 +71,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
+$mdp = "root";
 
 try {
     $bdd = new PDO("mysql:host=$servername;dbname=utilisateurs", $username, $password);
@@ -101,17 +102,28 @@ if(isset($_POST['ok'])) {
     );
     echo "Utilisateur ajouté avec succès.";
 }
-?>
-<script src="../js/script.js"></script>
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-          new google.translate.TranslateElement(
-              {pageLanguage: 'en'},
-              'google_translate_element'
-          );
-      } 
-</script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+function checkPasswordPwned($mdp) {
+    $hash = strtoupper(sha1($mdp)); // Hachage SHA-1
+    $prefix = substr($hash, 0, 5); // Les 5 premiers caractères
+    $suffix = substr($hash, 5);    // Le reste
+
+    // API pour les hachages commençant par le préfixe
+    $url = "https://api.pwnedpasswords.com/range/$prefix";
+    $response = file_get_contents($url);
+
+    // Recherche du suffixe dans les résultats
+    if (strpos($response, $suffix) !== false) {
+        echo "Ce mot de passe a été compromis dans une fuite de données.";
+    } else {
+        echo "Ce mot de passe est sécurisé.";
+    }
+}
+
+checkPasswordPwned($mdp);
+
+echo "Utilisateur ajouté avec succès.";
+
+?>
 </body>
 </html>
