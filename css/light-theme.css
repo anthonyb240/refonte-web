@@ -4,8 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-    word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */
+    word-wrap: break-word;
 }
 
 body {
@@ -19,6 +18,16 @@ body {
 
 li {
     list-style: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 4%;
+    padding: 2%;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Zen Dots', sans-serif;
+    font-weight: 600;
 }
 
 a {
@@ -139,7 +148,7 @@ header {
 }
 .titre_index .dev h2 {
     font-size: 2rem;
-    color: #ddd;
+    color: #a09d9d;
     margin: 0;
 }
 
