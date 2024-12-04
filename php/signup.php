@@ -25,7 +25,7 @@
 
             <div class="logo"><a href="index.html">Back to the Stack</a></div>
             <ul class="liens">
-                <li><a href="../html/recherche.html">🔎</a></li>
+                <li><a href="recherche.php">🔎</a></li>
                 <li><a href="../html/index.html">Menu Principal</a></li>
                 <li><a href="../html/comptech.html">Compétences Techniques</a></li>
                 <li><a href="../html/méthode.html">Méthode</a></li>
@@ -43,7 +43,7 @@
 
         <div class="dropdown_menu">
             <ul>
-                <li><a href="../html/recherche.html">🔎</a></li>
+                <li><a href="recherche.php">🔎</a></li>
                 <li><a href="../html/index.html">Menu Principal</a></li>
                 <li><a href="../html/comptech.html">Compétences Techniques</a></li>
                 <li><a href="../html/méthode.html">Méthode</a></li>

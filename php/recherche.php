@@ -14,12 +14,12 @@
             <label for="toggle" class="label"></label></div>
             <div class="logo"><a href="index.html">Back to the Stack</a></div>
             <ul class="liens">
-                <li><a href="recherche.html">🔎</a></li>
-                <li><a href="index.html">Menu Principal</a></li>
-                <li><a href="comptech.html">Compétences Techniques</a></li>
-                <li><a href="méthode.html">Méthode</a></li>
-                <li><a href="anciens clients.html">Expérience</a></li>
-                <li><a href="notreequipe.html">Équipe</a></li>
+                <li><a href="recherche.php">🔎</a></li>
+                <li><a href="../html/index.html">Menu Principal</a></li>
+                <li><a href="../html/comptech.html">Compétences Techniques</a></li>
+                <li><a href="../html/méthode.html">Méthode</a></li>
+                <li><a href="../html/anciens clients.html">Expérience</a></li>
+                <li><a href="../html/notreequipe.html">Équipe</a></li>
             </ul>
             <a href="../php/signup.php" class="action_btn">Signup</a>
             <a href="../php/login.php" class="action_btn">Login</a>
@@ -30,14 +30,14 @@
     
         <div class="dropdown_menu">
             <ul>
-                <li><a href="recherche.html">🔎</a></li>
-                <li><a href="index.html">Menu Principal</a></li>
-                <li><a href="comptech.html">Compétences Techniques</a></li>
-                <li><a href="méthode.html">Méthode</a></li>
-                <li><a href="anciens clients.html">Expérience</a></li>
-                <li><a href="notreequipe.html">Équipe</a></li>
-                <li><a href="../php/signup.php" class="action_btn2">Signup</a></li>
-                <li><a href="../php/login.php" class="action_btn2">Login</a></li>
+                <li><a href="recherche.php">🔎</a></li>
+                <li><a href="../html/index.html">Menu Principal</a></li>
+                <li><a href="../html/comptech.html">Compétences Techniques</a></li>
+                <li><a href="../html/méthode.html">Méthode</a></li>
+                <li><a href="../html/anciens clients.html">Expérience</a></li>
+                <li><a href="../html/notreequipe.html">Équipe</a></li>
+                <li><a href="signup.php" class="action_btn2">Signup</a></li>
+                <li><a href="login.php" class="action_btn2">Login</a></li>
             </ul>
             
         </div>
