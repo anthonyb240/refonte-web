@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html class="presentation_html" lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
 </head>
-
 <body class="presentation_body">
-    <header>
-        <h1 class="presentation_h1">Adrien Gamez</h1>
-    </header>
+<header>
+   
+    <div class="navbar">
+        <div class="mode"><input type="checkbox" id="toggle" class="checkbox">
+        <label for="toggle" class="label"></label></div>
+        <div class="logo"><a href="index.html">Back to the Stack</a></div>
+        <ul class="liens">
+            <li><a href="recherche.html">🔎</a></li>
+            <li><a href="index.html">Menu Principal</a></li>
+            <li><a href="comptech.html">Compétences Techniques</a></li>
+            <li><a href="méthode.html">Méthode</a></li>
+            <li><a href="anciens clients.html">Expérience</a></li>
+            <li><a href="notreequipe.html">Équipe</a></li>
+        </ul>
+        <a href="../php/login.php" class="action_btn">Login</a>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+        </div>
+    </div>
+
+    <div class="dropdown_menu">
+        <ul>
+            <li><a href="recherche.html">🔎</a></li>
+            <li><a href="index.html">Menu Principal</a></li>
+            <li><a href="comptech.html">Compétences Techniques</a></li>
+            <li><a href="méthode.html">Méthode</a></li>
+            <li><a href="anciens clients.html">Expérience</a></li>
+            <li><a href="notreequipe.html">Équipe</a></li>
+            <li><a href="../php/login.php" class="action_btn">Login</a></li>
+        </ul>
+        
+    </div>
+</header>
+<h1 class="presentation_h1">Adrien Gamez</h1>
+    
 
     <section class="texte">
         <img class="presentation_img" src="../images/equipe/adrien.jpg" alt="Portrait d'Adrien Gamez, développeur web.">
@@ -33,6 +64,17 @@
     </section>
 
     <script src="../js/script.js"></script>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+const toggleBtnIcon = document.querySelector('.toggle_btn i');
+const dropDownMenu = document.querySelector('.dropdown_menu');
+
+toggleBtn.onclick = function() {
+    dropDownMenu.classList.toggle('open');
+    const isOpen = dropDownMenu.classList.contains('open');
+    toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+};
+    </script>
 
 </body>
 </html>
