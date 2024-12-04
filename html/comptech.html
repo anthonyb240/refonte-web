@@ -10,6 +10,53 @@
 </head>
 
 <body class="comptech_body"> 
+
+  <header>
+    <div class="navbar">
+        <div class="mode"><input type="checkbox" id="toggle" class="checkbox">
+        <label for="toggle" class="label"></label>
+    </div>
+
+        <div class="logo"><a href="index.html">Back to the Stack</a></div>
+        <ul class="liens">
+            <li><a href="recherche.html">🔎</a></li>
+            <li><a href="index.html">Menu Principal</a></li>
+            <li><a href="comptech.html">Compétences Techniques</a></li>
+            <li><a href="méthode.html">Méthode</a></li>
+            <li><a href="anciens clients.html">Expérience</a></li>
+            <li><a href="notreequipe.html">Équipe</a></li>
+        </ul>
+        <a href="../php/login.php" class="action_btn">Login</a>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+        </div>
+    </div>
+
+    <div class="dropdown_menu">
+        <ul>
+            <li><a href="recherche.html">🔎</a></li>
+            <li><a href="index.html">Menu Principal</a></li>
+            <li><a href="comptech.html">Compétences Techniques</a></li>
+            <li><a href="méthode.html">Méthode</a></li>
+            <li><a href="anciens clients.html">Expérience</a></li>
+            <li><a href="notreequipe.html">Équipe</a></li>
+            <li><a href="../php/login.php" class="action_btn">Login</a></li>
+        </ul>
+    </div>
+</header>
+
+<script>
+      const toggleBtn = document.querySelector('.toggle_btn');
+      const toggleBtnIcon = document.querySelector('.toggle_btn i');
+      const dropDownMenu = document.querySelector('.dropdown_menu');
+
+      toggleBtn.onclick = function() {
+        dropDownMenu.classList.toggle('open');
+        const isOpen = dropDownMenu.classList.contains('open');
+        toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      };
+</script>
+
   <h1 class="comptech_h1">Nos Compétences Techniques</h1>
   <p class="comptech_p">Notre équipe d'informaticiens se distingue par sa polyvalence et son expertise pointue dans une large gamme de technologies. Grâce à une approche transversale qui combine développement, sécurité et innovation, nous sommes capables de répondre à vos besoins les plus exigeants. Découvrez ci-dessous les compétences techniques qui font de nous un partenaire de confiance dans la création de solutions logicielles et la sécurisation des infrastructures.</p>
       <table class="comptech_table">
@@ -26,24 +73,13 @@
         </tr>
       </table>
 
-          <div id="contenu" style="margin-top: 0%; font-size: 1.2rem; color: #d1d1d1;"></div>
-          <script src="../js/competences_techniques.js"></script>
-          <script src="../js/script.js"></script>
+      <div id="contenu" style="margin-top: 0%; font-size: 1.2rem; color: #d1d1d1;"></div>
+      <script src="../js/competences_techniques.js"></script>
+      <script src="../js/script.js"></script>
 
-           <h1 class="comptech_h1">Nos Valeurs</h1>
-        <p class="comptech_p">L'excellence technique, l'innovation constante et la sécurité sont au cœur de notre métier. Nous allions expertise et passion pour offrir des solutions sur mesure, adaptées à vos défis technologiques. Qu'il s'agisse de développement de logiciels, d'optimisation de la sécurité ou de la mise en place de technologies de pointe, nous nous engageons à vous fournir des services de la plus haute qualité.</p>
+      <h1 class="comptech_h1">Nos Valeurs</h1>
+      <p class="comptech_p">L'excellence technique, l'innovation constante et la sécurité sont au cœur de notre métier. Nous allions expertise et passion pour offrir des solutions sur mesure, adaptées à vos défis technologiques. Qu'il s'agisse de développement de logiciels, d'optimisation de la sécurité ou de la mise en place de technologies de pointe, nous nous engageons à vous fournir des services de la plus haute qualité.</p>
+  
+
     </body>
-
-    <script src="../js/script.js"></script>
-    <script>
-      const toggleBtn = document.querySelector('.toggle_btn');
-const toggleBtnIcon = document.querySelector('.toggle_btn i');
-const dropDownMenu = document.querySelector('.dropdown_menu');
-
-toggleBtn.onclick = function() {
-  dropDownMenu.classList.toggle('open');
-  const isOpen = dropDownMenu.classList.contains('open');
-  toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-};
-  </script>
 </html>

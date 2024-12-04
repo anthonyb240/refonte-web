@@ -1,5 +1,190 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Zen+Dots&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */
+}
+
+body {
+    height: 100vh;
+    background-color: whitesmoke;
+    margin-top: 2%;
+    font-family: 'Kanit', sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    white-space: nowrap; /* Evite le texte sur plusieurs lignes */
+}
+
+a:hover {
+    color: orange;
+}
+
+header {
+    background-color: rgba(50, 108, 209, 0.7);
+    margin-top: auto;
+    position: relative;
+    padding: 0.2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap; /* Evite le texte sur plusieurs lignes */
+}
+
+.logo{
+    font-family: 'Zen Dots', sans-serif !important;
+    font-size: 120% !important;
+}
+
+.navbar .liens {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne suivante si nécessaire */
+}
+
+.navbar .toggle_btn {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2s ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+.dropdown_menu {
+    display: none; /* Par défaut, caché */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 300px;
+    background-color: rgba(50, 108, 209, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu ul {
+    padding: 0;
+    color: black;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.dropdown_menu.open {
+    display: block; /* Affiche le menu déroulant */
+}
+
+@media screen and (max-width: 1025px) {
+    .navbar .liens {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .navbar .liens.open {
+        display: block;
+    }
+    
+    .liens li a {
+        display: none;
+    }
+
+    .action_btn  {
+        display: none;
+    }
+
+    .dropdown_menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .dropdown_menu.open {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+
+    /* Adaptation du logo et des liens sur les petits écrans */
+    .navbar .logo a {
+        font-size: 1.2rem; /* Plus petit pour les petits écrans */
+    }
+
+    .navbar .liens {
+        display: block; /* Force les éléments à se disposer sur plusieurs lignes */
+        gap: 1rem; /* Réduit l'espace entre les liens */
+    }
+    .liens li a {
+        display: none;
+    }
+
+    .action_btn  {
+        display: none;
+    }
+    .action_btn {
+        font-size: 0.75rem; /* Réduit la taille du bouton sur petits écrans */
+        padding: 0.3rem 0.8rem; /* Réduit la taille du bouton */
+    }
+}
+
 @media screen and (max-width: 2000px) {
     .index_html {
         overflow: hidden;
@@ -569,43 +754,6 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    .index_container {
-        flex-direction: column; /* Passe en colonne pour les petits écrans */
-    }
-
-    .index_gauche, .index_droite {
-        width: 100%; /* Chaque section prend la pleine largeur */
-        margin: 0;
-    }
-
-    .index_h1 {
-        font-size: 2rem;
-    }
-
-    .index_h2 {
-        font-size: 1.5rem;
-    }
-
-    .index_globe-logo {
-        width: 20%;
-    }
-
-    .index_menu a {
-        font-size: 1rem;
-    }
-
-    .index_menu hr {
-        width: 80%;
-        margin-left: 10%;
-    }
-
-    .index_droite {
-        position: static; /* Suppression du positionnement fixe */
-        height: auto; /* S'ajuste à la taille du contenu */
-    }
-}
-  
 /* Variations de la police Kanit par poids et style */
 .kanit-thin { font-family: "Kanit", serif; font-weight: 100; font-style: normal; }
 .kanit-extralight { font-family: "Kanit", serif; font-weight: 200; font-style: normal; }

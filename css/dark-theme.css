@@ -17,9 +17,11 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 header {
     background-color: rgba(50, 108, 209, 0.578);
 }
+
 li {
     list-style: none;
 }
@@ -28,7 +30,7 @@ a {
     text-decoration: none;
     color: white;
     font-size: 1rem;
-    white-space: nowrap; /* Evite le texte sur plusieurs lignes */
+    white-space: nowrap;
 }
 
 a:hover {
@@ -55,16 +57,18 @@ header {
 .navbar .logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    white-space: nowrap; /* Evite le texte sur plusieurs lignes */
+    white-space: nowrap;
 }
+
 .logo{
     font-family: 'Zen Dots', sans-serif !important;
     font-size: 120% !important;
 }
+
 .navbar .liens {
     display: flex;
     gap: 2rem;
-    flex-wrap: wrap; /* Permet aux liens de passer à la ligne suivante si nécessaire */
+    flex-wrap: wrap;
 }
 
 .navbar .toggle_btn {
@@ -73,7 +77,6 @@ header {
     cursor: pointer;
     display: none;
 }
-
 
 .action_btn {
     background-color: orange;
@@ -96,9 +99,8 @@ header {
     scale: 0.95;
 }
 
-/* Menu déroulant */
 .dropdown_menu {
-    display: none; /* Par défaut, caché */
+    display: none;
     position: absolute;
     top: 60px;
     right: 0;

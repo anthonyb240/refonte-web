@@ -9,7 +9,6 @@ themeLink.setAttribute('href', savedTheme);
 // Synchroniser l'état de la checkbox avec le thème actuel
 themeToggle.checked = savedTheme.includes('dark');
 
-
 // Gestion du changement d'état de la checkbox
 themeToggle.addEventListener('change', () => {
     if (themeToggle.checked) {
