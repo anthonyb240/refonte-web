@@ -184,6 +184,7 @@ header {
         top: 60px;
         left: 0;
         width: 100%; /* Prend toute la largeur */
+        z-index: 9999;
     }
 
     .dropdown_menu.open {
