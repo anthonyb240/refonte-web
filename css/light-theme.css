@@ -123,6 +123,37 @@ header {
     display: block; /* Affiche le menu déroulant */
 }
 
+.titre_index {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.titre_index .back h1 {
+    font-size: 3rem;
+    font-family: 'Zen Dots', sans-serif;
+    color: orange;
+}
+.titre_index .dev h2 {
+    font-size: 2rem;
+    color: #ddd;
+    margin: 0;
+}
+
+.titre_index .globe_index {
+    margin-top: 20px; 
+}
+
+.titre_index .globe_index img {
+    width: 150px; 
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centre horizontalement l'image */
+}
+
 @media screen and (max-width: 1025px) {
     .navbar .liens {
         display: none;

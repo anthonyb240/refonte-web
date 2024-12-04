@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Zen+Dots&display=swap');
 
 * {
-    width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
     word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */
 }
 
