@@ -641,40 +641,6 @@ body.signup_body {
     background-color: #005bb5;
 }
 
-#google_translate_element {
-    font-family: "Kanit", sans-serif;
-    font-size: 14px;
-    color: #333;
-    margin: 0;
-    text-align: left;
-    margin-top: 10px;
-}
-
-#google_translate_element .goog-te-gadget {
-    font-size: 0; 
-}
-
-.goog-te-combo {
-    padding: 8px 12px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    color: #333;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.goog-te-combo:hover {
-    border-color: #007aff;
-    box-shadow: 0 0 4px rgba(0, 122, 255, 0.5);
-}
-
-.goog-te-combo:focus {
-    border-color: #007aff;
-    box-shadow: 0 0 4px rgba(0, 122, 255, 0.8);
-}
-
 /* POLICE ECRITURE */
 .zen-dots-regular { font-family: "Zen Dots", serif; font-weight: 400; font-style: normal;}
 /* Variations de la police Kanit par poids et style */

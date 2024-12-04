@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-<html class="index_html" lang="fr">
-
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTTS - Menu principal</title>
-
-  <link id="theme-link" rel="stylesheet" href="../css/dark-theme.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&family=Zen+Dots&display=swap" rel="stylesheet">
-
-  <div id="google_translate_element"></div> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTTS - Menu principal</title>
+    <link rel="stylesheet" href="../css/dark_theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="index.html">Back to the Stack</a></div>
+            <ul class="liens">
+                <li><a href="recherche.html">🔎</a></li>
+                <li><a href="index.html">Menu Principal</a></li>
+                <li><a href="comptech.html">Compétences Techniques</a></li>
+                <li><a href="méthode.html">Méthode</a></li>
+                <li><a href="anciens clients.html">Expérience</a></li>
+                <li><a href="notreequipe.html">Équipe</a></li>
+            </ul>
+            <a href="../php/login.php" class="action_btn">Login</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+            </div>
+        </div>
 
-<body class="index_body">
-  <input type="checkbox" id="toggle" class="checkbox">
-  <label for="toggle" class="label"></label>
+        <div class="dropdown_menu">
+            <ul>
+                <li><a href="recherche.html">🔎</a></li>
+                <li><a href="index.html">Menu Principal</a></li>
+                <li><a href="comptech.html">Compétences Techniques</a></li>
+                <li><a href="méthode.html">Méthode</a></li>
+                <li><a href="anciens clients.html">Expérience</a></li>
+                <li><a href="notreequipe.html">Équipe</a></li>
+                <li><a href="../php/login.php" class="action_btn">Login</a></li>
+            </ul>
+        </div>
+    </header>
 
+<div class= titre_index>
+    <div class= back><h1>Back to the Stack</h1></div>
+    <div class= dev><h2>Développeurs full stack</h2></div>
 </div>
-  <div class="index_container">
-        <div class="index_row">
-            <div class="index_gauche">
-              <div class="index_logo">
-              <img src="../images/logo.png" alt="Logo globe" class="index_globe-logo">
-              </div>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+const toggleBtnIcon = document.querySelector('.toggle_btn i');
+const dropDownMenu = document.querySelector('.dropdown_menu');
 
-              <h1 class="index_h1">BACK TO THE STACK</h1>
-              <h2 class="index_h2">DÉVELOPPEURS WEB FULL STACK</h2>
-        </div>
-          
-
-        <div class="index_droite">
-          <div class="index_menu">
-            <a href="../php/signup.php">Inscription</a>
-            <hr>
-            <a href="../php/login.php">Connexion</a>
-            <hr>
-            <a href="recherche.html">Recherche</a>
-            <hr>
-            <a href="méthode.html">Notre méthode</a>
-            <hr>
-            <a href="comptech.html">Nos compétences techniques</a>
-            <hr>
-            <a href="anciens clients.html">Notre expérience</a>
-            <hr>
-            <a href="notreequipe.html">Notre équipe</a>
-            <hr>
-          </div>
-        </div>
-      </div>
-  </div>
-
-  <script src="../js/script.js"></script>
-
+toggleBtn.onclick = function() {
+    dropDownMenu.classList.toggle('open');
+    const isOpen = dropDownMenu.classList.contains('open');
+    toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+};
+    </script>
 </body>
 </html>
