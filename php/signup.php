@@ -75,7 +75,9 @@ $password = "root";
 try {
     $bdd = new PDO("mysql:host=$servername;dbname=utilisateurs", $username, $password);
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $bdd->exec("SET NAMES 'utf8'");
 }
+
 catch(PDOException $e){
     echo "Erreur : ".$e->getMessage();
 }

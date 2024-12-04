@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     
-    word-wrap: break-word;
+    word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */
 }
 
 body {
@@ -17,19 +17,6 @@ body {
     justify-content: center;
 }
 
-h1 {
-    text-align: center;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
-    margin-top: 4%;
-    padding: 2%;
-    font-size: 2rem;
-    text-transform: uppercase;
-    font-family: 'Zen Dots', sans-serif;
-    font-weight: 600;
-    color: #fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-}
-
 li {
     list-style: none;
 }
@@ -38,7 +25,7 @@ a {
     text-decoration: none;
     color: white;
     font-size: 1rem;
-    white-space: nowrap;
+    white-space: nowrap; /* Evite le texte sur plusieurs lignes */
 }
 
 a:hover {
@@ -65,7 +52,7 @@ header {
 .navbar .logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    white-space: nowrap;
+    white-space: nowrap; /* Evite le texte sur plusieurs lignes */
 }
 
 .logo{
@@ -76,7 +63,7 @@ header {
 .navbar .liens {
     display: flex;
     gap: 2rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne suivante si nécessaire */
 }
 
 .navbar .toggle_btn {
@@ -108,7 +95,7 @@ header {
 }
 
 .dropdown_menu {
-    display: none;
+    display: none; /* Par défaut, caché */
     position: absolute;
     top: 60px;
     right: 0;
@@ -133,7 +120,7 @@ header {
 }
 
 .dropdown_menu.open {
-    display: block;
+    display: block; /* Affiche le menu déroulant */
 }
 
 .titre_index {
@@ -144,20 +131,15 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
-
 .titre_index .back h1 {
     font-size: 3rem;
     font-family: 'Zen Dots', sans-serif;
     color: orange;
-    background: whitesmoke;
-    box-shadow: none;
 }
-
 .titre_index .dev h2 {
     font-size: 2rem;
-    color: rgb(87, 86, 86);
+    color: #ddd;
     margin: 0;
 }
 
@@ -169,7 +151,7 @@ header {
     width: 150px; 
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto; /* Centre horizontalement l'image */
 }
 
 @media screen and (max-width: 1025px) {
@@ -212,13 +194,14 @@ header {
         width: unset;
     }
 
+    /* Adaptation du logo et des liens sur les petits écrans */
     .navbar .logo a {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Plus petit pour les petits écrans */
     }
 
     .navbar .liens {
-        display: block;
-        gap: 1rem;
+        display: block; /* Force les éléments à se disposer sur plusieurs lignes */
+        gap: 1rem; /* Réduit l'espace entre les liens */
     }
     .liens li a {
         display: none;
@@ -228,15 +211,8 @@ header {
         display: none;
     }
     .action_btn {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.8rem;
-    }
-
-    .navbar .toggle_btn {
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: block;
+        font-size: 0.75rem; /* Réduit la taille du bouton sur petits écrans */
+        padding: 0.3rem 0.8rem; /* Réduit la taille du bouton */
     }
 }
 
@@ -276,6 +252,13 @@ header {
     .index_globe-logo {
         width: 13%;
         height: auto;
+    }
+    
+    .index_h1 {
+        font-family: "Zen Dots", sans-serif;
+        font-size: 3.5rem;
+        color: black;
+        margin: 1% 0;
     }
     
     .index_h2 {
@@ -339,7 +322,20 @@ header {
         display: flex;
         flex-direction: column;
     }
-
+    
+    .methode_h1 {
+        text-align: center;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
+        margin-top: 4%;
+        padding: 2%;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-family: 'Zen Dots', sans-serif;
+        font-weight: 600;
+        color: black;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    
     .methode_text-container {
         display: flex;
         flex-wrap: wrap;
@@ -359,7 +355,20 @@ header {
         display: flex;
         flex-direction: column;
     }
- 
+    
+    .comptech_h1 {
+        text-align: center;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
+        margin-top: 4%;
+        padding: 2%;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-family: 'Zen Dots', sans-serif;
+        font-weight: 600;
+        color: black;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    
     .comptech_p {
         font-size: 1.2rem;
         line-height: 1.8;
@@ -411,7 +420,19 @@ header {
         display: flex;
         flex-direction: column;
     }
-
+    
+    .ac_h1 {
+        text-align: center;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
+        margin-top: 4%;
+        padding: 2%;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-family: 'Zen Dots', sans-serif;
+        font-weight: 600;
+        color: black;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
     
     .ac_image-grid {
         display: grid;
@@ -470,6 +491,19 @@ header {
         flex-direction: column;
     }
     
+    .presentation_h1 {
+        text-align: center;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);
+        margin-top: 4.4%;
+        padding: 30px 0;
+        font-size: 4rem;
+        text-transform: uppercase;
+        font-family: 'Zen Dots', sans-serif;
+        font-weight: 600;
+        color: black;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    
     .presentation_img {
         width: 400px;
         height: auto;
@@ -486,6 +520,10 @@ header {
         gap: 20px;
     }
     
+    .ul{
+        color: rgb(0, 0, 0);
+    }
+
     #notre_equipe_titre {
         text-align: center;
         background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(209, 209, 209, 1) 30%, rgba(160, 216, 255, 1) 60%);

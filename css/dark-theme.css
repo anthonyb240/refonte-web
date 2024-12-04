@@ -148,7 +148,6 @@ header {
     font-size: 3rem;
     font-family: 'Zen Dots', sans-serif;
     color: orange;
-    background: black;
 }
 
 .titre_index .dev h2 {
@@ -334,39 +333,39 @@ header {
     }
 
     .navbar {
-        width: 100%;
-        height: 60px;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-sizing: border-box;
-    }
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
 
-    .navbar .logo a {
-        font-size: 1.5rem;
-        font-weight: bold;
-        white-space: nowrap;
-    }
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
 
-    .logo{
-        font-family: 'Zen Dots', sans-serif !important;
-        font-size: 120% !important;
-    }
+.logo{
+    font-family: 'Zen Dots', sans-serif !important;
+    font-size: 120% !important;
+}
 
-    .navbar .liens {
-        display: flex;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
+.navbar .liens {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
 
-    .navbar .toggle_btn {
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: block;
-    }
+.navbar .toggle_btn {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
 }
 
 .presentation_img {
@@ -383,6 +382,10 @@ header {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.ul{
+    color: rgb(255, 255, 255);
 }
 
 #notre_equipe_titre {
