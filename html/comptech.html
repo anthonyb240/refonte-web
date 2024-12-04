@@ -7,10 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Dots&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body class="comptech_body"> 
-
+<body> 
   <header>
     <div class="navbar">
         <div class="mode"><input type="checkbox" id="toggle" class="checkbox">
@@ -43,19 +43,8 @@
             <li><a href="../php/login.php" class="action_btn">Login</a></li>
         </ul>
     </div>
+
 </header>
-
-<script>
-      const toggleBtn = document.querySelector('.toggle_btn');
-      const toggleBtnIcon = document.querySelector('.toggle_btn i');
-      const dropDownMenu = document.querySelector('.dropdown_menu');
-
-      toggleBtn.onclick = function() {
-        dropDownMenu.classList.toggle('open');
-        const isOpen = dropDownMenu.classList.contains('open');
-        toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-      };
-</script>
 
   <h1 class="comptech_h1">Nos Compétences Techniques</h1>
   <p class="comptech_p">Notre équipe d'informaticiens se distingue par sa polyvalence et son expertise pointue dans une large gamme de technologies. Grâce à une approche transversale qui combine développement, sécurité et innovation, nous sommes capables de répondre à vos besoins les plus exigeants. Découvrez ci-dessous les compétences techniques qui font de nous un partenaire de confiance dans la création de solutions logicielles et la sécurisation des infrastructures.</p>
@@ -75,11 +64,19 @@
 
       <div id="contenu" style="margin-top: 0%; font-size: 1.2rem; color: #d1d1d1;"></div>
       <script src="../js/competences_techniques.js"></script>
-      <script src="../js/script.js"></script>
-
       <h1 class="comptech_h1">Nos Valeurs</h1>
       <p class="comptech_p">L'excellence technique, l'innovation constante et la sécurité sont au cœur de notre métier. Nous allions expertise et passion pour offrir des solutions sur mesure, adaptées à vos défis technologiques. Qu'il s'agisse de développement de logiciels, d'optimisation de la sécurité ou de la mise en place de technologies de pointe, nous nous engageons à vous fournir des services de la plus haute qualité.</p>
-  
+      <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
 
+        toggleBtn.onclick = function() {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+            toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        };
+      </script>
+      <script src="../js/script.js"></script>
     </body>
 </html>

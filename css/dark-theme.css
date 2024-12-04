@@ -4,10 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-    word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */
+    word-wrap: break-word;
 }
-
 
 body {
     height: 100vh;
@@ -18,8 +16,17 @@ body {
     justify-content: center;
 }
 
-header {
-    background-color: rgba(50, 108, 209, 0.578);
+h1 {
+    text-align: center;
+    background: linear-gradient(90deg, #000, #2B2B7B, #4C4CFF);
+    margin-top: 4%;
+    padding: 2%;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Zen Dots', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 li {
@@ -38,6 +45,7 @@ a:hover {
 }
 
 header {
+    background-color: rgba(50, 108, 209, 0.578);
     margin-top: auto;
     position: relative;
     padding: 0.2rem;
@@ -122,9 +130,8 @@ header {
     justify-content: center;
 }
 
-/* Affichage du menu lors de l'ouverture */
 .dropdown_menu.open {
-    display: block; /* Affiche le menu déroulant */
+    display: block;
 }
 
 .titre_index {
@@ -136,11 +143,13 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .titre_index .back h1 {
     font-size: 3rem;
     font-family: 'Zen Dots', sans-serif;
     color: orange;
 }
+
 .titre_index .dev h2 {
     font-size: 2rem;
     color: #ddd;
@@ -155,155 +164,69 @@ header {
     width: 150px; 
     height: auto;
     display: block;
-    margin: 0 auto; /* Centre horizontalement l'image */
+    margin: 0 auto;
 }
 
-/* Responsivité */
-@media (max-width: 1025px) {
-    .navbar .liens {
-        display: none; /* Cache les liens de la barre de navigation sur les petits écrans */
-    }
-
-    .navbar .toggle_btn {
-        display: block; /* Affiche le bouton hamburger */
-    }
-
-    .navbar .liens.open {
-        display: block; /* Affiche les liens lorsque "open" est ajouté */
+@media (max-width: 2000px) {
+    .ac_image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        padding: 20px;
+        width: 100%;
+        max-width: 2500px;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
     
-    .liens li a {
-        display: none;
+    .ac_image-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        height: 150px;
+    }
+    
+    .ac_image-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+        border-radius: 8px;
+    }
+    
+    .ac_text-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .presentation_html{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */ 
+    }
+    
+    .index_html {
+        overflow: hidden;
+        height:100%;
+        position:relative;
     }
 
-    .action_btn  {
-        display: none;
+    .methode_text-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
-
-    .dropdown_menu {
-        display: none; /* Par défaut, caché */
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%; /* Prend toute la largeur */
-        z-index: 9999;
-    }
-
-    .dropdown_menu.open {
-        display: block; /* Affiche le menu déroulant quand il a la classe "open" */
-    }
-}
-
-@media (max-width: 576px) {
-    .dropdown_menu {
-        left: 2rem;
-        width: unset;
-    }
-
-    /* Adaptation du logo et des liens sur les petits écrans */
-    .navbar .logo a {
-        font-size: 1.2rem; /* Plus petit pour les petits écrans */
-    }
-
-    .navbar .liens {
-        display: block; /* Force les éléments à se disposer sur plusieurs lignes */
-        gap: 1rem; /* Réduit l'espace entre les liens */
-    }
-    .liens li a {
-        display: none;
-    }
-
-    .action_btn  {
-        display: none;
-    }
-    .action_btn2 {
-        font-size: 0.75rem; /* Réduit la taille du bouton sur petits écrans */
-        padding: 0.3rem 0.8rem; /* Réduit la taille du bouton */
-    }
-}
-
-
-.index_html {
-	overflow: hidden;
-	height:100%;
-	position:relative;
-}
-
-
-
-.methode_body {
-    font-family: 'Kanit', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #fff;
-    height: 100%;
-    display: flex;
-    flex-direction: column; 
-}
-
-.methode_h1 {
-    text-align: center;
-    background: linear-gradient(90deg, #000, #2B2B7B, #4C4CFF);
-    margin-top: 4.4%;
-    padding: 30px 0;
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-family: 'Zen Dots', sans-serif;
-    font-weight: 600;
-    color: #fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    width: 100%; /* Assurez-vous que le h1 prend toute la largeur */
-    box-sizing: border-box; /* Assurez-vous que le padding et la largeur sont gérés correctement */
-}
-
-@media (max-width: 576px) {
-    .methode_h1 {
-        font-size: 2rem; /* Réduit la taille du texte sur petits écrans */
-        padding: 20px 0; /* Ajuste le padding pour que ce soit plus lisible */
-    }
-}
-
-.methode_text-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.comptech_body {
-    font-family: 'Kanit', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #fff;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.comptech_h1 {
-    text-align: center;
-    background: linear-gradient(90deg, #000, #2B2B7B, #4C4CFF);
-    margin-top: 4.4%;
-    padding: 30px 0;
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-family: 'Zen Dots', sans-serif;
-    font-weight: 600;
-    color: #fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    width: 100%; /* Assurez-vous que le h1 prend toute la largeur */
-    box-sizing: border-box; /* Assurez-vous que le padding et la largeur sont gérés correctement */
-}
-
-@media (max-width: 576px) {
-    .comptech_h1 {
-        font-size: 2rem; /* Réduit la taille du texte sur petits écrans */
-        padding: 20px 0; /* Ajuste le padding pour que ce soit plus lisible */
-    }
-}
-
+    
+    
 .comptech_p {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -345,127 +268,105 @@ header {
 .comptech_tr:nth-child(odd) {
     background: #222;
 }
-
-.ac_body {
-	font-family: 'Kanit', sans-serif;
-	margin: 0;
-	padding: 0;
-	background: #000;
-	color: #fff;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
 }
 
-.ac_h1 {
-    text-align: center;
-    background: linear-gradient(90deg, #000, #2B2B7B, #4C4CFF);
-    margin-top: 4.4%;
-    padding: 30px 0;
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-family: 'Zen Dots', sans-serif;
-    font-weight: 600;
-    color: #fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    width: 100%; /* Assurez-vous que le h1 prend toute la largeur */
-    box-sizing: border-box; /* Assurez-vous que le padding et la largeur sont gérés correctement */
-}
+@media (max-width: 1025px) {
+    .navbar .liens {
+        display: none; 
+    }
 
-@media (max-width: 576px) {
-    .ac_h1 {
-        font-size: 2rem; /* Réduit la taille du texte sur petits écrans */
-        padding: 20px 0; /* Ajuste le padding pour que ce soit plus lisible */
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .navbar .liens.open {
+        display: block;
+    }
+    
+    .liens li a {
+        display: none;
+    }
+
+    .action_btn  {
+        display: none;
+    }
+
+    .dropdown_menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    .dropdown_menu.open {
+        display: block;
     }
 }
 
-.ac_image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 20px;
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+
+    .navbar .logo a {
+        font-size: 1.2rem;
+    }
+
+    .navbar .liens {
+        display: block;
+        gap: 1rem;
+    }
+    .liens li a {
+        display: none;
+    }
+
+    .action_btn  {
+        display: none;
+    }
+
+    .action_btn2 {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .navbar {
     width: 100%;
-    max-width: 2500px;
+    height: 60px;
+    max-width: 1200px;
     margin: 0 auto;
-    box-sizing: border-box;
-}
-
-.ac_image-item {
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    height: 150px;
-}
-
-.ac_image-item img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-    border-radius: 8px;
-}
-
-.ac_text-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.notre_equipe_body {
-	font-family: "Kanit", sans-serif;
-	margin: 0;
-	padding: 0;
-	background: black; 
-	color: white;
-	line-height: 1.6;
-	height: 100%; 
-}
-.presentation_html{
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    justify-content: space-between;
     box-sizing: border-box;
-    word-wrap: break-word; /* Ajouté pour éviter que le texte dépasse */ 
 }
 
-.presentation_body {
-    font-family: 'Kanit', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #fff;
-    height: 100%;
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo{
+    font-family: 'Zen Dots', sans-serif !important;
+    font-size: 120% !important;
+}
+
+.navbar .liens {
     display: flex;
-    flex-direction: column;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
-.presentation_h1 {
-    text-align: center;
-    background: linear-gradient(90deg, #000, #2B2B7B, #4C4CFF);
-    margin-top: 4.4%;
-    padding: 30px 0;
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-family: 'Zen Dots', sans-serif;
-    font-weight: 600;
-    color: #fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    width: 100%; /* Assurez-vous que le h1 prend toute la largeur */
-    box-sizing: border-box; /* Assurez-vous que le padding et la largeur sont gérés correctement */
+.navbar .toggle_btn {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
 }
-
-@media (max-width: 576px) {
-    .presentation_h1 {
-        font-size: 2rem; /* Réduit la taille du texte sur petits écrans */
-        padding: 20px 0; /* Ajuste le padding pour que ce soit plus lisible */
-    }
 }
-
 
 .presentation_img {
     width: 400px;
@@ -650,7 +551,6 @@ header {
 .checkbox{
     display: none;
 }
-
 
 .checkbox:checked + label:after{
     transform: translateX(20px);
