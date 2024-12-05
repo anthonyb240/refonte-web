@@ -140,7 +140,7 @@ if (isset($_GET['competence'])) {
         echo "<p>Erreur de préparation de la requête pour la compétence.</p>";
     }
 } else {
-    echo "<p>Veuillez sélectionner une compétence.</p>";
+    echo "<p class='message-recherche'>Veuillez sélectionner une compétence.</p>";
 }
 
 $conn->close();

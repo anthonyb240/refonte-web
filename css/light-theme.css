@@ -577,8 +577,8 @@ header {
     }
     
     .resultat-link:hover .resultat-item {
-        transform: scale(1.05); /* Zoom léger */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Accentuation de l'ombre */
+        transform: scale(1.05); 
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
     }
     
     .resultat-item {
@@ -628,12 +628,12 @@ header {
         margin: 0 auto;
         gap: 20px;
         padding: 20px;
+        margin-top: 20px;
         background-color: white;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
     }
     
-    /* Photo et présentation alignées */
     .photo_email-container {
         flex: 1 1 300px;
         text-align: center;
@@ -658,7 +658,6 @@ header {
         color: #444;
     }
     
-    /* Blocs en bas : email, formation et compétences */
     .block_membre {
         display: flex;
         flex-wrap: wrap;
