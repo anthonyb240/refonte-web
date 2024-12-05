@@ -101,6 +101,8 @@ header {
 
 .action_btn:hover {
     scale: 1.05;
+    background-color: orange;
+    color: white
 }
 
 .action_btn:active {
@@ -274,7 +276,7 @@ header {
         font-family: "Zen Dots", sans-serif;
         font-size: 2.5rem;
         margin: 1% 0;
-        color: #ff004c;
+        color: orange;
     }
     
     .index_droite {
@@ -307,7 +309,7 @@ header {
     
     .index_menu a:hover {
         font-weight: bold;
-        color: #ff004c;
+        color: orange;
     }
     
     .index_row {
@@ -361,7 +363,7 @@ header {
     }
     
     .comptech_th:hover {
-        background-color: #ff004c; 
+        background-color: orange; 
         cursor: pointer;
         border-radius: 10px;
     }
@@ -465,7 +467,7 @@ header {
         display: flex;
         justify-content: center;
         text-align: center;
-        color: #ff004c;
+        color: orange;
         font-size: 3vw; 
         font-weight: 600
     }
@@ -620,7 +622,7 @@ header {
     }
     
     .block strong {
-        color: #ff004c;
+        color: orange;
         font-weight: bold;
     }
 

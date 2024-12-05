@@ -101,6 +101,8 @@ header {
 
 .action_btn:hover {
     scale: 1.05;
+    background-color: orange;
+    color: white;
 }
 
 .action_btn:active {
@@ -259,7 +261,7 @@ header {
 }
 
 .comptech_th:hover {
-    background-color: #b3582c; 
+    background-color: orange; 
     cursor: pointer;
     border-radius: 10px;
 }
@@ -423,7 +425,7 @@ header {
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	color: #b3582c;
+	color: orange;
 	font-size: 3vw; 
 	font-weight: 600
 }
@@ -569,7 +571,7 @@ header {
 }
 
 .block strong {
-    color: #b3582c;
+    color: orange;
     font-weight: bold;
 }
 
