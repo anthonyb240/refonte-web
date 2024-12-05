@@ -115,35 +115,36 @@ if (isset($_GET['competence'])) {
             ";
 
             if ($result->num_rows > 0) {
-                    echo "<h2 class='resultat-titre'>Membres ayant la compétence : $competence_name</h2>";
-                    echo "<div class='resultats-container'>";
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<a href='membre.php?id=" . $row['id'] . "' class='resultat-link'>";
-                        echo "<div class='resultat-item'>";
-                        echo "<img src='" . $row['photo'] . "' alt='" . $row['nom'] . "' class='resultat-photo'>";
-                        echo "<div class='resultat-details'>";
-                        echo "<p class='resultat-nom'>Nom: " . $row['nom'] . "</p>";
-                        echo "<p class='resultat-email'>Email: " . $row['email'] . "</p>";
-                        echo "</div>";
-                        echo "</div>";
-                    }
+                echo "<h2 class='resultat-titre'>Membres ayant la compétence : $competence_name</h2>";
+                echo "<div class='resultats-container'>";
+                while ($row = $result->fetch_assoc()) {
+                    echo "<a href='membre.php?id=" . $row['id'] . "' class='resultat-link'>";
+                    echo "<div class='resultat-item'>";
+                    echo "<img src='" . $row['photo'] . "' alt='" . $row['nom'] . "' class='resultat-photo'>";
+                    echo "<div class='resultat-details'>";
+                    echo "<p class='resultat-nom'>Nom: " . $row['nom'] . "</p>";
+                    echo "<p class='resultat-email'>Email: " . $row['email'] . "</p>";
                     echo "</div>";
-                } else {
-                    echo "<p>Aucun membre trouvé pour cette compétence.</p>";
+                    echo "</div>";
+                    echo "</a>";
                 }
-
-                $stmt->close();
+                echo "</div>";
             } else {
-                echo "Erreur de préparation de la requête des membres.";
+                echo "<p>Aucun membre trouvé pour cette compétence.</p>";
             }
+
+            $stmt->close();
         } else {
-            echo "<p>Compétence non trouvée.</p>";
+            echo "Erreur de préparation de la requête des membres.";
         }
     } else {
-        echo "Erreur de préparation de la requête pour la compétence.";
+        echo "<p>Compétence non trouvée.</p>";
     }
 } else {
-    echo "<p>Veuillez sélectionner une compétence.</p>";
+    echo "Erreur de préparation de la requête pour la compétence.";
+}
+} else {
+echo "<p>Veuillez sélectionner une compétence.</p>";
 }
 
 $conn->close();
