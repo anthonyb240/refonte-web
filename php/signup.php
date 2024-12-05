@@ -7,13 +7,9 @@
     <link id="theme-link" rel="stylesheet" href="../css/dark-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&family=Zen+Dots&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <style>
-        .warning {
-            color: red;
-            margin-top: 10px;
-            display: none;
-        }
-    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="sha1.js"></script>
 </head>
 
 <body class="signup_body">
@@ -85,66 +81,73 @@
 
             <label for="mdp">Votre Mot de Passe :</label>
             <input type="password" id="mdp" name="mdp" placeholder="Mot de Passe" required>
-            <div id="password-warning" class="warning">⚠️ Ce mot de passe a été compromis.</div>
 
-            <input type="submit" value="M'inscrire" name="ok">
+            <input type="submit" id="button" value="M'inscrire" name="ok">
+            <div id="result"></div>
         </form>
     </div>
 
-<?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
+<script>
+    $(function()) {
+        $("#button").on("click", function() {
+            var sha = sha1($("#mdp").val()).toUpperCase();
+            var prefix = sha.substring(0, 5);
+            var suffix = sha.substring(5, sha.length);
 
-    function isPasswordCompromised($mdp) {
-        $sha1Password = strtoupper(sha1($mdp)); 
-        $prefix = substr($sha1Password, 0, 5);
-        $suffix = substr($sha1Password, 5); 
+            $.ajax({
+                url: "https://api.pwnedpasswords.com/range/" + prefix
+            }).done(function (response) {
+                var hashes = response.split('\n');
+                var breached = false;
 
-        $url = "https://api.pwnedpasswords.com/range/$prefix";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        curl_close($ch);
+                for(let i =0; i < hashes.length; i++) {
+                    var hash = hashes[i];
+                    var h = hash.split(':');
 
-        return strpos($response, $suffix) !== false;
-    }
+                    if (h[0] === suffix) {
+                        $("#result").html("Mot de passe compromis." + h[1] + " times.");
+                        breached = true;
+                        break;
+                    }
+                }
 
-    if (isPasswordCompromised($password)) {
-        $error = "Ce mot de passe a été compromis. Veuillez en choisir un autre.";
-        
-    } else {
-        $dsn = "mysql:host=mysql;port=3306;dbname=Website;charset=utf8mb4";
+                if (!breached) {
+                    <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "root";
 
-        try {
-            $bdd = new PDO("mysql:host=$servername;dbname=utilisateurs", $username, $password);
-            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo "Erreur : " . $e->getMessage();
-        }
-
-
-        if (isset($_POST['ok'])) {
-            $email = $_POST['email'];
-            $mdp = $_POST['mdp'];
-            $nom = $_POST['nom'];
-            $prenom = $_POST['prenom'];
-            $pseudo = $_POST['pseudo'];
-
+                        try {
+                            $bdd = new PDO("mysql:host=$servername;dbname=utilisateurs", $username, $password);
+                            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        } catch (PDOException $e) {
+                            echo "Erreur : " . $e->getMessage();
+                        }
                 
-            $requete = $bdd->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom, MD5(:mdp), :email)");
-            $requete->execute([
-                "pseudo" => $pseudo,
-                "nom" => $nom,
-                "prenom" => $prenom,
-                "mdp" => $mdp,
-                "email" => $email
-            ]);
-            echo "<p>Utilisateur ajouté avec succès.</p>";
-        } 
+                
+                        if (isset($_POST['ok'])) {
+                            $email = $_POST['email'];
+                            $mdp = $_POST['mdp'];
+                            $nom = $_POST['nom'];
+                            $prenom = $_POST['prenom'];
+                            $pseudo = $_POST['pseudo'];
+                
+                                
+                            $requete = $bdd->prepare("INSERT INTO users VALUES (0, :pseudo, :nom, :prenom, MD5(:mdp), :email)");
+                            $requete->execute([
+                                "pseudo" => $pseudo,
+                                "nom" => $nom,
+                                "prenom" => $prenom,
+                                "mdp" => $mdp,
+                                "email" => $email
+                            ]);
+                            echo "<p>Utilisateur ajouté avec succès.</p>";
+                        } 
+                    ?>
+                }
+            });
+        });
     }
-?>
-
+    </script>
 </body>
 </html>
