@@ -79,30 +79,35 @@ if (isset($_GET['id'])) {
     <section class="texte_membre">
     <div class="photo_email-container">
         <img class="presentation_img" src="<?php echo $membre['photo']; ?>" alt="Portrait de <?php echo $membre['nom']; ?>">
-        <p class="p_email"><h2>Email :</h2> <?php echo htmlspecialchars($membre['email']); ?></p>
-        <p class="formation"><h2>Formations :</h2> <?php echo htmlspecialchars($membre['formation']); ?></p>
-        <div class="block_membre">
-        <p class="competences">
-            <h2>Compétences :</h2>             
-                <?php foreach ($competences as $competence) : ?>
-                <li><?php echo htmlspecialchars($competence['nom']); ?></li>
-                <?php endforeach; ?>
-        </p>
-        </div>
-    
-    <div class="presentation_text-container">
+        <div class="presentation_text-container">
         <p>
             <?php 
                 $text = htmlspecialchars(mb_convert_encoding($membre['test'], 'UTF-8', 'auto'));
                 echo nl2br($text); 
             ?>
         </p>
+        </div>
+        <div class="block_membre">
+        <div class="bloc">
+            <h2>Email :</h2>
+            <p><?php echo htmlspecialchars($membre['email']); ?></p>
+        </div>
+        <div class="bloc">
+            <h2>Formations :</h2>
+            <p><?php echo htmlspecialchars($membre['formation']); ?></p>
+        </div>
+        <div class="bloc">
+            <h2>Compétences :</h2>
+            <ul>
+                <?php foreach ($competences as $competence) : ?>
+                <li><?php echo htmlspecialchars($competence['nom']); ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
     </div>
+    
+    
 </section>
-
-    <div class="block_membre">
-        <p class="p_formation">Formation : <?php echo htmlspecialchars($membre['formation']); ?></p>
-    </div>
     </div>
 
     <script>
