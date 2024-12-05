@@ -1,82 +1,82 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>BTTS - Recherche</title>
-        <link id="theme-link" rel="stylesheet" href="../css/dark-theme.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>BTTS - Recherche</title>
+    <link id="theme-link" rel="stylesheet" href="../css/dark-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="recherche_body">
 
-    </head>
-    <header>
-   
-        <div class="navbar">
-            <div class="mode"><input type="checkbox" id="toggle" class="checkbox">
-            <label for="toggle" class="label"></label></div>
-            <div class="logo"><a href="../html/index.html">Back to the Stack</a></div>
-            <ul class="liens">
-                <li><a href="recherche.php">🔎</a></li>
-                <li><a href="../html/index.html">Menu Principal</a></li>
-                <li><a href="../html/comptech.html">Compétences Techniques</a></li>
-                <li><a href="../html/méthode.html">Méthode</a></li>
-                <li><a href="../html/anciens clients.html">Expérience</a></li>
-                <li><a href="../html/notreequipe.html">Équipe</a></li>
-            </ul>
-            <a href="../php/signup.php" class="action_btn">Signup</a>
-            <a href="../php/login.php" class="action_btn">Login</a>
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
-            </div>
+<header>
+    <div class="navbar">
+        <div class="mode">
+            <input type="checkbox" id="toggle" class="checkbox">
+            <label for="toggle" class="label"></label>
         </div>
-    
-        <div class="dropdown_menu">
-            <ul>
-                <li><a href="recherche.php">🔎</a></li>
-                <li><a href="../html/index.html">Menu Principal</a></li>
-                <li><a href="../html/comptech.html">Compétences Techniques</a></li>
-                <li><a href="../html/méthode.html">Méthode</a></li>
-                <li><a href="../html/anciens clients.html">Expérience</a></li>
-                <li><a href="../html/notreequipe.html">Équipe</a></li>
-                <li><a href="signup.php" class="action_btn2">Signup</a></li>
-                <li><a href="login.php" class="action_btn2">Login</a></li>
-            </ul>
-            
+        <div class="logo">
+            <a href="../html/index.html">Back to the Stack</a>
         </div>
-    </header>
-    
-    <body class="recherche_body">
-    <form action="recherche.php" method="GET" class="Barre_de_recherche">
-        <select name="competence" id="competence">
+        <ul class="liens">
+            <li><a href="recherche.php">🔎</a></li>
+            <li><a href="../html/index.html">Menu Principal</a></li>
+            <li><a href="../html/comptech.html">Compétences Techniques</a></li>
+            <li><a href="../html/méthode.html">Méthode</a></li>
+            <li><a href="../html/anciens_clients.html">Expérience</a></li>
+            <li><a href="../html/notreequipe.html">Équipe</a></li>
+        </ul>
+        <a href="../php/signup.php" class="action_btn">Signup</a>
+        <a href="../php/login.php" class="action_btn">Login</a>
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+        </div>
+    </div>
+
+    <div class="dropdown_menu">
+        <ul>
+            <li><a href="recherche.php">🔎</a></li>
+            <li><a href="../html/index.html">Menu Principal</a></li>
+            <li><a href="../html/comptech.html">Compétences Techniques</a></li>
+            <li><a href="../html/méthode.html">Méthode</a></li>
+            <li><a href="../html/anciens_clients.html">Expérience</a></li>
+            <li><a href="../html/notreequipe.html">Équipe</a></li>
+            <li><a href="signup.php" class="action_btn2">Signup</a></li>
+            <li><a href="login.php" class="action_btn2">Login</a></li>
+        </ul>
+    </div>
+</header>
+
+<form action="recherche.php" method="GET" class="Barre_de_recherche">
+    <select name="competence" id="competence">
         <option value="" disabled selected>Choisir une compétence</option>
-            <option value="1">Python</option>
-            <option value="4">Django</option>
-            <option value="5">React</option>
-            <option value="6">TypeScript</option>
-            <option value="7">JavaScript</option>
-            <option value="8">Node.js</option>
-            <option value="9">PHP</option>
-            <option value="10">MySQL</option>
-            <option value="11">PostgreSQL</option>
-            <option value="12">OSINT</option>
-            <option value="13">HTML5</option>
-            <option value="14">CSS3</option>
-        </select>
-        <button type="submit">🔎</button>
-    </form>
-        
-        <script src="../js/script.js"></script>
-        <script>
-            const toggleBtn = document.querySelector('.toggle_btn');
+        <option value="1">Python</option>
+        <option value="4">Django</option>
+        <option value="5">React</option>
+        <option value="6">TypeScript</option>
+        <option value="7">JavaScript</option>
+        <option value="8">Node.js</option>
+        <option value="9">PHP</option>
+        <option value="10">MySQL</option>
+        <option value="11">PostgreSQL</option>
+        <option value="12">OSINT</option>
+        <option value="13">HTML5</option>
+        <option value="14">CSS3</option>
+    </select>
+    <button type="submit">🔎</button>
+</form>
+
+<script src="../js/script.js"></script>
+<script>
+    const toggleBtn = document.querySelector('.toggle_btn');
     const toggleBtnIcon = document.querySelector('.toggle_btn i');
     const dropDownMenu = document.querySelector('.dropdown_menu');
-    
+
     toggleBtn.onclick = function() {
         dropDownMenu.classList.toggle('open');
         const isOpen = dropDownMenu.classList.contains('open');
-        toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        toggleBtnIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     };
-        </script>
-    </body>
-</html>
+</script>
 
 <?php
 $host = 'localhost';
@@ -93,12 +93,7 @@ if ($conn->connect_error) {
 if (isset($_GET['competence'])) {
     $competence_id = (int)$_GET['competence'];
 
-    $competence_sql = "
-        SELECT nom
-        FROM competences
-        WHERE id = ?
-    ";
-
+    $competence_sql = "SELECT nom FROM competences WHERE id = ?";
     if ($stmt = $conn->prepare($competence_sql)) {
         $stmt->bind_param('i', $competence_id);
         $stmt->execute();
@@ -113,6 +108,11 @@ if (isset($_GET['competence'])) {
                 JOIN membre_competences ON membres.id = membre_competences.membre_id
                 WHERE membre_competences.competence_id = ?
             ";
+
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('i', $competence_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
                 echo "<h2 class='resultat-titre'>Membres ayant la compétence : $competence_name</h2>";
@@ -132,21 +132,20 @@ if (isset($_GET['competence'])) {
             } else {
                 echo "<p>Aucun membre trouvé pour cette compétence.</p>";
             }
-
             $stmt->close();
         } else {
-            echo "Erreur de préparation de la requête des membres.";
+            echo "<p>Compétence non trouvée.</p>";
         }
     } else {
-        echo "<p>Compétence non trouvée.</p>";
+        echo "<p>Erreur de préparation de la requête pour la compétence.</p>";
     }
 } else {
-    echo "Erreur de préparation de la requête pour la compétence.";
-}
-} else {
-echo "<p>Veuillez sélectionner une compétence.</p>";
+    echo "<p>Veuillez sélectionner une compétence.</p>";
 }
 
 $conn->close();
 ?>
+
+</body>
+</html>
 
