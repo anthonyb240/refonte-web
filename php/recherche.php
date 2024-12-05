@@ -79,7 +79,6 @@
 </html>
 
 <?php
-// Connexion à la base de données
 $host = 'localhost';
 $user = 'root';
 $pass = 'root';
@@ -87,33 +86,27 @@ $db = 'competences_equipe';
 
 $conn = new mysqli($host, $user, $pass, $db);
 
-// Vérifier la connexion
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 if (isset($_GET['competence'])) {
-    // Récupérer l'ID de la compétence depuis la requête GET
     $competence_id = (int)$_GET['competence'];
 
-    // Requête pour récupérer le nom de la compétence
     $competence_sql = "
         SELECT nom
         FROM competences
         WHERE id = ?
     ";
 
-    // Préparer et exécuter la requête pour récupérer le nom de la compétence
     if ($stmt = $conn->prepare($competence_sql)) {
-        $stmt->bind_param('i', $competence_id); // 'i' pour un entier
+        $stmt->bind_param('i', $competence_id);
         $stmt->execute();
-        $stmt->bind_result($competence_name); // Lier le résultat à la variable $competence_name
-        $stmt->fetch(); // Récupérer le résultat
+        $stmt->bind_result($competence_name);
+        $stmt->fetch();
         $stmt->close();
 
-        // Vérifier si la compétence a été trouvée
         if ($competence_name) {
-            // Requête pour récupérer les membres avec cette compétence
             $sql = "
                 SELECT membres.id, membres.nom, membres.email, membres.photo
                 FROM membres
@@ -121,15 +114,12 @@ if (isset($_GET['competence'])) {
                 WHERE membre_competences.competence_id = ?
             ";
 
-            // Préparer et exécuter la requête pour récupérer les membres
             if ($stmt = $conn->prepare($sql)) {
-                $stmt->bind_param('i', $competence_id); // 'i' pour un entier
+                $stmt->bind_param('i', $competence_id); 
                 $stmt->execute();
                 $result = $stmt->get_result();
 
-                // Vérifier si des membres ont été trouvés
                 if ($result->num_rows > 0) {
-                    // Afficher le titre avec le nom de la compétence
                     echo "<h1>Membres ayant la compétence : $competence_name</h1>";
                     while ($row = $result->fetch_assoc()) {
                         echo "<div>";
@@ -142,7 +132,6 @@ if (isset($_GET['competence'])) {
                     echo "<p>Aucun membre trouvé pour cette compétence.</p>";
                 }
 
-                // Fermer la requête préparée
                 $stmt->close();
             } else {
                 echo "Erreur de préparation de la requête des membres.";
@@ -157,7 +146,6 @@ if (isset($_GET['competence'])) {
     echo "<p>Veuillez sélectionner une compétence.</p>";
 }
 
-// Fermer la connexion
 $conn->close();
 ?>
 

@@ -734,7 +734,6 @@ header {
     }
 }
 
-/* Variations de la police Kanit par poids et style */
 .kanit-thin { font-family: "Kanit", serif; font-weight: 100; font-style: normal; }
 .kanit-extralight { font-family: "Kanit", serif; font-weight: 200; font-style: normal; }
 .kanit-light { font-family: "Kanit", serif; font-weight: 300; font-style: normal; }
@@ -745,7 +744,6 @@ header {
 .kanit-extrabold { font-family: "Kanit", serif; font-weight: 800; font-style: normal; }
 .kanit-black { font-family: "Kanit", serif; font-weight: 900; font-style: normal; }
 
-/* Variations italique pour chaque poids */
 .kanit-thin-italic { font-family: "Kanit", serif; font-weight: 100; font-style: italic; }
 .kanit-extralight-italic { font-family: "Kanit", serif; font-weight: 200; font-style: italic; }
 .kanit-light-italic { font-family: "Kanit", serif; font-weight: 300; font-style: italic; }

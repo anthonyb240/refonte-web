@@ -1,9 +1,6 @@
-// Fonction pour afficher le contenu en fonction de l'ID
 function afficherTexte(id) {
-    // Récupérer l'élément où le contenu sera affiché
     const contenuDiv = document.getElementById('contenu');
   
-    // Créer un objet avec les contenus associés à chaque ID
     const contenus = {
       dev: `
         <h2>Développement et Intégration Logicielle</h2>
@@ -64,7 +61,6 @@ function afficherTexte(id) {
       `
     };
   
-    // Vérifier si l'ID existe et insérer le contenu correspondant
     if (contenus[id]) {
       contenuDiv.innerHTML = contenus[id];
     } else {
@@ -74,24 +70,21 @@ function afficherTexte(id) {
 
 function cacherTexte() {
   const contenuDiv = document.getElementById('contenu');
-  contenuDiv.innerHTML = "";  // Vider le contenu du div
+  contenuDiv.innerHTML = "";
 }
 
-// Ajouter un événement de clic sur les cellules du tableau
 const cellules = document.querySelectorAll('th');
 
 cellules.forEach(cellule => {
-  let estAffiche = false;  // Variable pour vérifier si le texte est affiché ou caché
+  let estAffiche = false; 
   
   cellule.addEventListener('click', function() {
     const id = cellule.getAttribute('data-id');
-    
-    // Si le texte est déjà affiché, le cacher
+
     if (estAffiche) {
       cacherTexte();
       estAffiche = false;
     } else {
-      // Afficher le texte associé à la cellule
       afficherTexte(id);
       estAffiche = true;
     }
