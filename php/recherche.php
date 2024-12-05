@@ -44,9 +44,9 @@
     </header>
     
     <body class="recherche_body">
-    <form action="recherche.php" method="GET">
-        <label for="competence">Choisir une compétence :</label>
+    <form action="recherche.php" method="GET" class="Barre_de_recherche">
         <select name="competence" id="competence">
+        <option value="" disabled selected>Choisir une compétence</option>
             <option value="1">Python</option>
             <option value="4">Django</option>
             <option value="5">React</option>
@@ -60,7 +60,7 @@
             <option value="13">HTML5</option>
             <option value="14">CSS3</option>
         </select>
-        <button type="submit">Rechercher</button>
+        <button type="submit">🔎</button>
     </form>
         
         <script src="../js/script.js"></script>
@@ -114,20 +114,20 @@ if (isset($_GET['competence'])) {
                 WHERE membre_competences.competence_id = ?
             ";
 
-            if ($stmt = $conn->prepare($sql)) {
-                $stmt->bind_param('i', $competence_id); 
-                $stmt->execute();
-                $result = $stmt->get_result();
-
-                if ($result->num_rows > 0) {
-                    echo "<h1>Membres ayant la compétence : $competence_name</h1>";
+            if ($result->num_rows > 0) {
+                    echo "<h2 class='resultat-titre'>Membres ayant la compétence : $competence_name</h2>";
+                    echo "<div class='resultats-container'>";
                     while ($row = $result->fetch_assoc()) {
-                        echo "<div>";
-                        echo "<img src='" . $row['photo'] . "' alt='" . $row['nom'] . "' width='100' height='100'>";
-                        echo "<p>Nom: " . $row['nom'] . "</p>";
-                        echo "<p>Email: " . $row['email'] . "</p>";
+                        echo "<a href='membre.php?id=" . $row['id'] . "' class='resultat-link'>";
+                        echo "<div class='resultat-item'>";
+                        echo "<img src='" . $row['photo'] . "' alt='" . $row['nom'] . "' class='resultat-photo'>";
+                        echo "<div class='resultat-details'>";
+                        echo "<p class='resultat-nom'>Nom: " . $row['nom'] . "</p>";
+                        echo "<p class='resultat-email'>Email: " . $row['email'] . "</p>";
+                        echo "</div>";
                         echo "</div>";
                     }
+                    echo "</div>";
                 } else {
                     echo "<p>Aucun membre trouvé pour cette compétence.</p>";
                 }

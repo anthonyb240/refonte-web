@@ -427,30 +427,43 @@ header {
 	font-size: 3vw; 
 	font-weight: 600
 }
-
-#notre_equipe_instruction {
-	display:flex;
-	justify-content: center;
-	text-align: center;
-	font-style: italic;
+.recherche_body{
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .Barre_de_recherche{
-    margin-top: 250px;
-    padding: 60px;
-    background-color: rgba(0, 0, 0);
-}
-
-.Barre_de_recherche input[type="text"]{
-    width: 250px;
-    padding: 8px;
-    font-size: 16pt;
-    border: none;
-    outline: none;
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    background-color: #ffffff;
     border-radius: 50px;
+    padding: 10px 10px;
 }
 
-.Barre_de_recherche input[type="submit"]{
+.Barre_de_recherche select{
+    appearance: none;
+    border: none;
+    font-size: 16px;
+    padding: 12px;
+    width: 350px; 
+    border-radius: 50px;
+    outline: none;
+    background-color: #f4f4f4;
+    color: #000000;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+}
+
+.Barre_de_recherche button{
     width: 30px;
     padding: 0px;
     font-size: 16pt;
@@ -461,29 +474,68 @@ header {
     background-color: transparent;
 }
 
-.Barre_de_recherche input[type="submit"]:hover{
-    font-size: 17pt;
+.resultat-titre{
+    font-family: "Zen Dots", sans-serif;
+    font-size: 20pt;
+    padding-top: 30px;
+    margin: 1%;
+    color: #000000;
 }
 
-.Resultats {
-    margin-top: 10px;
+.resultats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.resultat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 300px;
-    padding: 15px;
-    font-size: 14pt;
-    margin: 20px auto;
-    background-color: #fff;
-    text-align: left;
-    border-radius: 10px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
 }
 
-.Resultats ol{
-    padding-left: 16px;
-    list-style-position: outside;
+.resultat-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid #c2c2c2;
 }
 
-.Resultats li{
-    margin: 14px 0;
-    text-align: justify;
+.resultat-nom {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.resultat-email {
+    font-size: 14px;
+    color: #555;
+}
+
+.resultat-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.resultat-link:hover .resultat-item {
+    transform: scale(1.05); /* Zoom léger */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Accentuation de l'ombre */
+}
+
+.resultat-item {
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .texte {

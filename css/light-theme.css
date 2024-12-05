@@ -477,6 +477,118 @@ header {
         font-style: italic;
     }
     
+    .recherche_body{
+        text-align: center;
+        font-family: 'Kanit', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #000000;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .Barre_de_recherche{
+        margin-top: 150px;
+        display: flex;
+        align-items: center;
+        gap: 8px; 
+        background-color: #ffb833;
+        border-radius: 50px;
+        padding: 10px 10px;
+    }
+    
+    .Barre_de_recherche select{
+        appearance: none;
+        border: none;
+        font-size: 16px;
+        padding: 12px;
+        width: 350px; 
+        border-radius: 50px;
+        outline: none;
+        background-color: #ffdb98;
+        color: #000000;
+        cursor: pointer;
+        font-family: 'Kanit', sans-serif;
+    }
+    
+    .Barre_de_recherche button{
+        width: 30px;
+        padding: 0px;
+        font-size: 16pt;
+        margin-left: -40px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: transparent;
+    }
+    
+    .resultat-titre{
+        font-family: "Zen Dots", sans-serif;
+        font-size: 20pt;
+        padding-top: 30px;
+        margin: 1%;
+        color: #000000;
+    }
+    
+    .resultats-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .resultat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffdb98;
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        text-align: center;
+        font-family: 'Kanit', sans-serif;
+    }
+    
+    .resultat-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 12px;
+        border: 3px solid #ffb833;
+    }
+    
+    .resultat-nom {
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    
+    .resultat-email {
+        font-size: 14px;
+        color: #555;
+    }
+    
+    .resultat-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .resultat-link:hover .resultat-item {
+        transform: scale(1.05); /* Zoom léger */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Accentuation de l'ombre */
+    }
+    
+    .resultat-item {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+
     .texte {
         display: flex;
         flex-wrap: wrap;
