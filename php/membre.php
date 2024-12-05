@@ -82,7 +82,7 @@ if (isset($_GET['id'])) {
         <div class="presentation_text-container">
         <p>
             <?php 
-                $text = htmlspecialchars(mb_convert_encoding($membre['test'], 'UTF-8', 'auto'));
+                $text = htmlspecialchars(mb_convert_encoding($membre['presentation'], 'UTF-8', 'auto'));
                 echo nl2br($text); 
             ?>
         </p>
@@ -105,9 +105,7 @@ if (isset($_GET['id'])) {
             </ul>
         </div>
     </div>
-    
-    
-</section>
+    </section>
     </div>
 
     <script>
